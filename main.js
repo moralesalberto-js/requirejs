@@ -1,12 +1,28 @@
-// Using require.js to load the necessary files in here
 
-require(['jquery'], function(jquery) {
-  $(document).ready(function() {
-    // compile all the haml files
-    fn = haml.compileHaml({ sourceId: 'main-body'});
+// Starting to use requirejs to load dependencies
 
-    // paint the haml file in the main area div
-    $('#main-content').html(fn());
+// This is a backbone view
+// el is the div that we will replace
+var TheView = Backbone.View.extend({
+  el: '#main-content',
+    initialize: function() {
+    },
+    // This is the render function that will use the sourceId haml content
+    // to paint the form
+    render: function(model) {
+      var template = haml.compileHaml('main-body');
+      this.$el.html(template(model));
+    }
+});
 
-  });
+
+
+$(document).ready(function() {
+  // instantiate the view
+  //var theView = new TheView();
+  // call the render function to paint
+
+  //theView.render({fullName: "Alberto Morales"});
+  var theView = new ListingView();
+  theView.render();
 });

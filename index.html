@@ -1,18 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="underscore.js"></script>
 <script type="text/javascript" src="underscore.string.js"></script>
 <script type="text/javascript" src="haml.js"></script>
-<script data-main="main.js" src="require.js"></script>
+<script type="text/javascript" src="backbone.js"></script>
+<script type="text/javascript" src="view_listing.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </head>
 
 <body>
 
 <script type="text/haml-template" id="main-body">
 %h3
-  this is the title
-
+  Backbone and HAML
+  %br
+  = new Date();
+  %br
+  = fullName
+  %br
 </script>
 
 <div id="main-content">

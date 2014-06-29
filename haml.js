@@ -2297,8 +2297,5 @@
 
 }).call(this);
 
-/*
-//@ sourceMappingURL=haml.map
-*/
 
 
